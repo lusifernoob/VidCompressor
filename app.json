@@ -61,7 +61,12 @@
       "required": true
     },
     "LOG_CHANNEL": {
-      "description": "Your Bot's Log Channel's Username. For Help ask in @linux_repo",
+      "description": "Your Bot's Log Channel's Username to access the media being compressed through bot. For Help ask in @linux_repo",
+      "value": "",
+      "required": true
+    },
+    "ACCESS_CHANNEL": {
+      "description": "Your Bot's private Log Channel's Username. For Help ask in @linux_repo",
       "value": "",
       "required": true
     },
