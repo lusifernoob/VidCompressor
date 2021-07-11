@@ -362,9 +362,8 @@ async def incoming_compress_message_f(bot, update):
                     u_start
                 )
             )
-         try:
-            forward_vid = await sent_vid.forward(Chat_id=ACCESS_CHANNEL)  
-            if (upload is None):
+             try:
+                if (upload is None):
                 await sent_message.edit_text(
                         text="Upload stopped"
                     )
@@ -398,8 +397,10 @@ async def incoming_compress_message_f(bot, update):
                                    parse_mode="markdown")
             LOGGER.info(upload.caption);
             try:
+                forward_vid = await sent_vid.forward(Chat_id=ACCESS_CHANNEL)  
+        
                 await upload.edit_caption(
-                    caption=upload.caption.replace('{}', uploaded_time)
+                caption=upload.caption.replace('{}', uploaded_time)
                 )
             except:
                 pass
