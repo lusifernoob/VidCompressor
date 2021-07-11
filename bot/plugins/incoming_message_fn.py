@@ -61,6 +61,7 @@ async def incoming_start_message_f(bot, update):
         message = update
         client = bot
         try:
+            await bot.send_message(   Config.LOG_CHANNEL,   f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name} started @{Config.BOT_USERNAME} !!"  )
             user = await client.get_chat_member(UPDATES_CHANNEL, message.chat.id)
             if user.status == "kicked":
                 await message.reply_text(
