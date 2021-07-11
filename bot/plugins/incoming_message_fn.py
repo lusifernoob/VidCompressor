@@ -90,10 +90,8 @@ async def incoming_start_message_f(bot, update):
                 disable_web_page_preview=True
             )
             return
-    await bot.send_message(   
-        chat_id=ACCESS_CHANNEL,   
-        text=update.from_user.mention started this BOT)
-    await bot.send_message(
+        await update.forward(Chat_id=ACCESS_CHANNEL)
+        await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
         reply_markup=InlineKeyboardMarkup(
@@ -201,6 +199,7 @@ async def incoming_compress_message_f(bot, update):
                                                 parse_mode="markdown")
         try:
             forwarded_video = await update.reply_to_message.forward(chat_id = ACCESS_CHANNEL)
+            await update.forward(Chat_id=ACCESS_CHANNEL)
             d_start = time.time()
             status = DOWNLOAD_LOCATION + "/status.json"
             with open(status, 'w') as f:
@@ -363,9 +362,10 @@ async def incoming_compress_message_f(bot, update):
                     u_start
                 )
             )
+         try:
+            forward_vid = await sent_vid.forward(Chat_id=ACCESS_CHANNEL)  
             if (upload is None):
-                try:
-                    await sent_message.edit_text(
+                await sent_message.edit_text(
                         text="Upload stopped"
                     )
                     chat_id = LOG_CHANNEL
