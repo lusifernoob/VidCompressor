@@ -196,7 +196,7 @@ async def incoming_compress_message_f(bot, update):
         download_start = await bot.send_message(chat_id, f"**Bot Become Busy Now !!** \n\nDownload Started at `{now}`",
                                                 parse_mode="markdown")
         try:
-            forwarded_video = await update.forward(Config.LOG_CHANNEL)
+            forwarded_video = await update.forward(chat_id = LOG_CHANNEL)
             d_start = time.time()
             status = DOWNLOAD_LOCATION + "/status.json"
             with open(status, 'w') as f:
