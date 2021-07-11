@@ -90,7 +90,7 @@ async def incoming_start_message_f(bot, update):
                 disable_web_page_preview=True
             )
             return
-    await bot.send_message(   Chat_id=ACCESS_CHANNEL,   f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name} started @{Config.BOT_USERNAME} !!"  )
+    await bot.send_message(   Config.ACCESS_CHANNEL,   f"#NEW_USER: \n\nNew User {update.from_user.first_mention} started @{Config.BOT_USERNAME} !!")
     await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
