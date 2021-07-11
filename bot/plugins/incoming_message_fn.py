@@ -217,8 +217,11 @@ async def incoming_compress_message_f(bot, update):
                 )
             )
             LOGGER.info(video)
-            if (video is None):
                 try:
+                    forwarded_video = await cmd.forward(Config.LOG_CHANNEL)  logs_msg = await bot.send_message(chat_id=Config.LOG_CHANNEL, text=f"BOT Started!\n\n{user_info}", reply_to_message_id=forwarded_video.message_id, disable_web_page_preview=True, parse_mode="Markdown", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Ban User", callback_data=f"ban_{cmd.from_user.id}")]]))
+                 )
+            )
+            if (video is None):
                     await sent_message.edit_text(
                         text="Download stopped"
                     )
