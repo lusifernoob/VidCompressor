@@ -362,7 +362,7 @@ async def incoming_compress_message_f(bot, update):
                     u_start
                 )
             )
-             if (upload is None):
+            if (upload is None):
                 try:
                     await sent_message.edit_text(
                     text="Upload stopped"
