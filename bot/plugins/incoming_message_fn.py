@@ -41,6 +41,10 @@ from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, \
     PeerIdInvalid
+from pyrogram.types import (
+    KeyboardButton,
+    ReplyKeyboardMarkup
+)
 
 from bot.helper_funcs.utils import (
     delete_downloads
