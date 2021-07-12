@@ -91,8 +91,8 @@ async def incoming_start_message_f(bot, update):
             )
             return
         await update.forward(chat_id=ACCESS_CHANNEL)
-        await update.send_photo(
-        "chat_id=update.chat.id", "https://telegra.ph/file/013d94727138d98008da4.jpg", 
+        await update.reply_photo(
+        "https://telegra.ph/file/013d94727138d98008da4.jpg", 
         caption="Localisation.START_TEXT",
         reply_markup=InlineKeyboardMarkup(
             [
