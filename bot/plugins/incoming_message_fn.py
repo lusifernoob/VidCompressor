@@ -102,8 +102,7 @@ async def incoming_start_message_f(bot, update):
             resize_keyboard=True  # Make the keyboard smaller
         )
         ),
-        reply_to_message_id=update.message_id,
-    )
+        
 
 
 async def incoming_compress_message_f(bot, update):
