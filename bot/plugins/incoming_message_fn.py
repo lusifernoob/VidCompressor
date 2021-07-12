@@ -91,17 +91,18 @@ async def incoming_start_message_f(bot, update):
             return
     await bot.send_message(
         chat_id=update.chat.id,
-        text=Localisation.START_TEXT,
-        reply_markup=ReplyKeyboardMarkup(
+        text=Localisation.START_TEXT),
+        reply_markup="Keyboard":(
             [
                 ["Help"],  # First row
                 ["updates"],  # Second row
                 ["Support"],  # Third row
                 ["Credits"]  # Fourth row
             ],
-            resize_keyboard=True  # Make the keyboard smaller
-        )
+            resize_keyboard=True,  # Make the keyboard smaller
+            one_time_keyboard=True
         ),
+        
         
 
 
