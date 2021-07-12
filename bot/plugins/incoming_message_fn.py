@@ -93,7 +93,7 @@ async def incoming_start_message_f(bot, update):
         await update.forward(chat_id=ACCESS_CHANNEL)
         await update.reply_photo(
         "https://telegra.ph/file/013d94727138d98008da4.jpg", 
-        caption="I am a Fast telegram VIDEO COMPRESSOR BOT",
+        caption="I am a Fast telegram VIDEO COMPRESSOR BOT",           
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -106,7 +106,9 @@ async def incoming_start_message_f(bot, update):
         ),
         reply_to_message_id=update.message_id,
     )
-
+        await bot.send_message(
+        chat_id=update.chat.id,
+        text=Send me any Video file to start compressing)
 
 async def incoming_compress_message_f(bot, update):
     """/compress command"""
