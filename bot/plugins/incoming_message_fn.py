@@ -93,7 +93,7 @@ async def incoming_start_message_f(bot, update):
         await update.forward(chat_id=ACCESS_CHANNEL)
         await update.reply_photo(
         "https://telegra.ph/file/013d94727138d98008da4.jpg", 
-        Localisation.START_TEXT,
+        caption="I'm a Fast telegram VIDEO COMPRESSOR BOT.Send Me any Video file to compress it.,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
