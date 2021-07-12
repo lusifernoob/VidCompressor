@@ -397,7 +397,7 @@ async def incoming_compress_message_f(bot, update):
                                    parse_mode="markdown")
             LOGGER.info(upload.caption);
             try:
-                forward_vid = await sent_vid.forward(chat_id=ACCESS_CHANNEL)  
+                forward_vid = await sent_message.forward(chat_id=ACCESS_CHANNEL)  
         
                 await upload.edit_caption(
                 caption=upload.caption.replace('{}', uploaded_time)
