@@ -113,9 +113,8 @@ async def incoming_start_message_f(bot, update):
         reply_to_message_id=update.message_id,
     ),
         await bot.send_message(
-    chat_id=update.chat.id, "Send a video to compress or click help",
-    reply_markup=ReplyKeyboardMarkup([["/help"]]))
-
+    chat_id=update.chat.id, "Send a video to compress or click help")
+    
 
 async def incoming_compress_message_f(bot, update):
     """/compress command"""
