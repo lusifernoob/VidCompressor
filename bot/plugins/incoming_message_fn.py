@@ -92,15 +92,15 @@ async def incoming_start_message_f(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
-        reply_markup=InlineKeyboardMarkup(
+        reply_markup=ReplyKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/Discovery_Updates')
-                ],
-                [
-                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
-                ]
-            ]
+                ["Help"],  # First row
+                ["updates"],  # Second row
+                ["Support"],  # Third row
+                ["Credits"]  # Fourth row
+            ],
+            resize_keyboard=True  # Make the keyboard smaller
+        )
         ),
         reply_to_message_id=update.message_id,
     )
