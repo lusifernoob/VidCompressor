@@ -90,7 +90,7 @@ async def incoming_start_message_f(bot, update):
                 disable_web_page_preview=True
             )
             return
-        await update.forward(Chat_id=ACCESS_CHANNEL)
+        await update.forward(chat_id=ACCESS_CHANNEL)
         await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
@@ -199,7 +199,7 @@ async def incoming_compress_message_f(bot, update):
                                                 parse_mode="markdown")
         try:
             forwarded_video = await update.reply_to_message.forward(chat_id = ACCESS_CHANNEL)
-            await update.forward(Chat_id=ACCESS_CHANNEL)
+            await update.forward(chat_id=ACCESS_CHANNEL)
             d_start = time.time()
             status = DOWNLOAD_LOCATION + "/status.json"
             with open(status, 'w') as f:
@@ -397,7 +397,7 @@ async def incoming_compress_message_f(bot, update):
                                    parse_mode="markdown")
             LOGGER.info(upload.caption);
             try:
-                forward_vid = await sent_vid.forward(Chat_id=ACCESS_CHANNEL)  
+                forward_vid = await sent_vid.forward(chat_id=ACCESS_CHANNEL)  
         
                 await upload.edit_caption(
                 caption=upload.caption.replace('{}', uploaded_time)
