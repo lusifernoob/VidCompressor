@@ -13,11 +13,11 @@ class Localisation:
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "📥 Downloading ... 📥 \n"
+    DOWNLOAD_START = "📥 Downloading your video  📥 \n"
     
-    UPLOAD_START = "📤 Uploading ... 📤 \n"
+    UPLOAD_START = "📤 Uploading compressed video 📤 \n"
     
-    COMPRESS_START = "📀 Trying to compress ... 📀"
+    COMPRESS_START = "🗜 Trying to compress 🗜"
     
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     
@@ -47,7 +47,7 @@ class Localisation:
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "Hi, I am Video Compressor Bot \n\n1. Send me your telegram big video file \n2. Reply to the file with: `/compress 50` \n\nSupport Group: @Linux_Repo"
+        "Hi, I am Video Compressor Bot \n\n1. Send me the file you want to compress \n2. Reply to the file with: `/compress 50` \n\nSupport Group: @DevsZone"
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",

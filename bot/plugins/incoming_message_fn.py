@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Shrimadhav U K / Akshay C / @AbirHasan2005
+# (c) Shrimadhav U K / Akshay C / @AbirHasan2005 / @Chauhanmahesh
 
 # the logging things
 
@@ -21,6 +21,7 @@ from bot import (
     DOWNLOAD_LOCATION,
     AUTH_USERS,
     LOG_CHANNEL,
+    ACCESS_CHANNEL,
     UPDATES_CHANNEL,
     DATABASE_URL,
     SESSION_NAME
@@ -39,6 +40,12 @@ from bot.helper_funcs.display_progress import (
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import (
+ReplyKeyboardMarkup,
+KeyboardButton,
+InlineKeyboardMarkup, 
+InlineKeyboardButton
+)
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, \
     PeerIdInvalid
 
@@ -84,14 +91,15 @@ async def incoming_start_message_f(bot, update):
             return
         except Exception:
             await message.reply_text(
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Something went Wrong. Contact my [Support Group](https://t.me/DevsZone).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
             return
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Localisation.START_TEXT,
+        await update.forward(chat_id=ACCESS_CHANNEL)
+        await update.reply_photo(
+        "https://telegra.ph/file/013d94727138d98008da4.jpg", 
+        caption="I am a Fast telegram VIDEO COMPRESSOR BOT",           
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -104,7 +112,6 @@ async def incoming_start_message_f(bot, update):
         ),
         reply_to_message_id=update.message_id,
     )
-
 
 async def incoming_compress_message_f(bot, update):
     """/compress command"""
@@ -138,7 +145,7 @@ async def incoming_compress_message_f(bot, update):
         except Exception:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Something went Wrong. Contact my [Support Group](https://t.me/DevsZone).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -196,6 +203,8 @@ async def incoming_compress_message_f(bot, update):
         download_start = await bot.send_message(chat_id, f"**Bot Become Busy Now !!** \n\nDownload Started at `{now}`",
                                                 parse_mode="markdown")
         try:
+            forwarded_video = await update.reply_to_message.forward(chat_id = ACCESS_CHANNEL)
+            await update.forward(chat_id=ACCESS_CHANNEL)
             d_start = time.time()
             status = DOWNLOAD_LOCATION + "/status.json"
             with open(status, 'w') as f:
@@ -361,7 +370,7 @@ async def incoming_compress_message_f(bot, update):
             if (upload is None):
                 try:
                     await sent_message.edit_text(
-                        text="Upload stopped"
+                    text="Upload stopped"
                     )
                     chat_id = LOG_CHANNEL
                     utc_now = datetime.datetime.utcnow()
@@ -393,8 +402,10 @@ async def incoming_compress_message_f(bot, update):
                                    parse_mode="markdown")
             LOGGER.info(upload.caption);
             try:
+                forward_vid = await sent_message.forward(chat_id=ACCESS_CHANNEL)  
+        
                 await upload.edit_caption(
-                    caption=upload.caption.replace('{}', uploaded_time)
+                caption=upload.caption.replace('{}', uploaded_time)
                 )
             except:
                 pass
@@ -446,8 +457,8 @@ async def incoming_cancel_message_f(bot, update):
     if os.path.exists(status):
         inline_keyboard = []
         ikeyboard = []
-        ikeyboard.append(InlineKeyboardButton("Yes 🚫", callback_data=("fuckingdo").encode("UTF-8")))
-        ikeyboard.append(InlineKeyboardButton("No 🤗", callback_data=("fuckoff").encode("UTF-8")))
+        ikeyboard.append(InlineKeyboardButton("Yes", callback_data=("fuckingdo").encode("UTF-8")))
+        ikeyboard.append(InlineKeyboardButton("No", callback_data=("fuckoff").encode("UTF-8")))
         inline_keyboard.append(ikeyboard)
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
         await update.reply_text("Are you sure? 🚫 This will stop the compression!", reply_markup=reply_markup,
