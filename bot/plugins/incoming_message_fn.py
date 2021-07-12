@@ -362,10 +362,10 @@ async def incoming_compress_message_f(bot, update):
                     u_start
                 )
             )
-             try:
-                if (upload is None):
-                await sent_message.edit_text(
-                        text="Upload stopped"
+             if (upload is None):
+                try:
+                    await sent_message.edit_text(
+                    text="Upload stopped"
                     )
                     chat_id = LOG_CHANNEL
                     utc_now = datetime.datetime.utcnow()
@@ -378,7 +378,7 @@ async def incoming_compress_message_f(bot, update):
                                            f"**Upload Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`",
                                            parse_mode="markdown")
                     await upload_start.delete()
-                except:
+                except
                     pass
                 delete_downloads()
                 return
