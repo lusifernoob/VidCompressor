@@ -108,7 +108,7 @@ async def incoming_start_message_f(bot, update):
     ),
         await bot.send_message(
         chat_id=update.chat.id,
-        text=Send me any Video file to start compressing
+        Send me any Video file to start compressing
     )
 
 async def incoming_compress_message_f(bot, update):
