@@ -40,6 +40,12 @@ from bot.helper_funcs.display_progress import (
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import (
+ReplyKeyboardMarkup,
+KeyboardButton,
+InlineKeyboardMarkup, 
+InlineKeyboardButton
+)
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, \
     PeerIdInvalid
 
@@ -107,9 +113,9 @@ async def incoming_start_message_f(bot, update):
         reply_to_message_id=update.message_id,
     ),
         await bot.send_message(
-        chat_id=update.chat.id,
-        Send me any Video file to start compressing
-    )
+    chat_id=update.chat.id, "Send a video to compress or click help",
+    reply_markup=ReplyKeyboardMarkup([["/help"]]))
+
 
 async def incoming_compress_message_f(bot, update):
     """/compress command"""
