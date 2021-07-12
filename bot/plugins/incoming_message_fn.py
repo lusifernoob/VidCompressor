@@ -92,7 +92,7 @@ async def incoming_start_message_f(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT),
-        reply_markup="Keyboard":(
+        reply_markup=Keyboard(
             [
                 ["Help"],  # First row
                 ["updates"],  # Second row
