@@ -60,7 +60,7 @@ broadcast - Reply to Message to Broadcast
 ban_user - Ban A User with time & reason
 unban_user - Unban a User
 banned_users - Show Banned Users
-exec - EXEC 🙄
+exec - EXEC
 ```
 
 ## Follow on:
