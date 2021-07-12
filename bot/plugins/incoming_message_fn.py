@@ -378,7 +378,7 @@ async def incoming_compress_message_f(bot, update):
                                            f"**Upload Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`",
                                            parse_mode="markdown")
                     await upload_start.delete()
-                except
+                except:
                     pass
                 delete_downloads()
                 return
