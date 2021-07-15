@@ -99,19 +99,9 @@ async def incoming_start_message_f(bot, update):
         await update.forward(chat_id=ACCESS_CHANNEL)
         await update.reply_photo(
         "https://telegra.ph/file/013d94727138d98008da4.jpg", 
-        caption="I am a Fast telegram VIDEO COMPRESSOR BOT",           
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/TheChariotOfLight')
-                ],
-                [
-                    InlineKeyboardButton('Support Group', url='https://t.me/DevsZone')
-                ]
-            ]
-        ),
-        reply_to_message_id=update.message_id,
-    )
+        caption="I am a Fast telegram VIDEO COMPRESSOR BOT"
+        )
+       
 
 async def incoming_compress_message_f(bot, update):
     """/compress command"""
@@ -123,7 +113,7 @@ async def incoming_compress_message_f(bot, update):
             if user.status == "kicked":
                 await bot.send_message(
                     chat_id=update.chat.id,
-                    text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                    text="Sorry, You are Banned to use me.",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -145,8 +135,7 @@ async def incoming_compress_message_f(bot, update):
         except Exception:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text="Something went Wrong. Contact my [Support Group](https://t.me/DevsZone).",
-                parse_mode="markdown",
+                text="Something went Wrong. ",
                 disable_web_page_preview=True
             )
             return
@@ -170,7 +159,7 @@ async def incoming_compress_message_f(bot, update):
                 try:
                     await bot.send_message(
                         chat_id=update.chat.id,
-                        text="🤬 Value should be 10 to 90",
+                        text="Value should be between 10 to 90",
                         reply_to_message_id=update.message_id
                     )
                     return
@@ -402,8 +391,7 @@ async def incoming_compress_message_f(bot, update):
                                    parse_mode="markdown")
             LOGGER.info(upload.caption);
             try:
-                forward_vid = await sent_message.forward(chat_id=ACCESS_CHANNEL)  
-        
+                
                 await upload.edit_caption(
                 caption=upload.caption.replace('{}', uploaded_time)
                 )
