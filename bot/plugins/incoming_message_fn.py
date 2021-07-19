@@ -404,7 +404,7 @@ async def incoming_compress_message_f(bot, update):
             try:
                 
                 await upload.edit_caption(
-                caption=upload.caption.replace('{}', uploaded_time)
+                caption=upload.caption.replace('{}', uploaded_time, 1)
                 )
                 
                 await upload.forward(chat_id=ACCESS_CHANNEL)  
