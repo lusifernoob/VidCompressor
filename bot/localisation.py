@@ -47,7 +47,7 @@ class Localisation:
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "Hello! I am a fast Video Compressor Bot. \n\nSteps to compress a Video :  \n\n• Send the Video you want the Bot to compress \n\n• Reply to the Video by ' /compress N ' \n\n           Where replace N with the percentage of Compression you need in the range of '10 to 90' Example : /compress 70 "
+        "Hello! I am a fast Video Compressor Bot. \n\nSteps to compress a Video :  \n\n• Send the Video you want the Bot to compress \n\n• Reply to the Video by ' /compress N ' \n\n           Where replace N with the percentage of Compression you need in the range of '10 to 90'  \n\nExample : /compress 70 "
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",
