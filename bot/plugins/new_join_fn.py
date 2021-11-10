@@ -43,7 +43,7 @@ async def help_message_f(client, message):
             user = await client.get_chat_member(UPDATES_CHANNEL, message.chat.id)
             if user.status == "kicked":
                await message.reply_text(
-                   text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                   text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/OMG_info).",
                    parse_mode="markdown",
                    disable_web_page_preview=True
                )
@@ -63,7 +63,7 @@ async def help_message_f(client, message):
             return
         except Exception:
             await message.reply_text(
-                text="Something went Wrong. Contact my [Support Group](https://t.me/Devszone).",
+                text="Something went Wrong. Contact my [Support Group](https://t.me/OMG_info).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -74,14 +74,14 @@ async def help_message_f(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Developer', url='https://t.me/AbirHasan2005') #pro dev , 99.9% credits goes to him
+                    InlineKeyboardButton('creator', url='https://t.me/shado_hackers') #pro dev , 99.9% credits goes to him
                 ],
                 [
-                    InlineKeyboardButton('Support Group', url='https://t.me/DevsZone')
+                    InlineKeyboardButton('Support Group', url='https://t.me/OMG_info')
                 ],
                 [
-                    InlineKeyboardButton('Contributor', url='https://t.me/TheChariotOflight'), # Bloody Thief, Don't Become a Developer by Stealing other's Codes & Hard Works!
-                    InlineKeyboardButton('Source Code', url='https://github.com/vasusen-code/VidCompressor') # Must Give us Credits!
+                    InlineKeyboardButton('log channel', url='https://t.me/videocom_v1'), # Bloody Thief, Don't Become a Developer by Stealing other's Codes & Hard Works!
+                    InlineKeyboardButton('follow', url='https://mobile.twitter.com/Lusifer_noob') # Must Give us Credits!
                 ]
             ]
         ),
