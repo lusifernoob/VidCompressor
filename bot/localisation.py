@@ -6,7 +6,7 @@ from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hello, \n\nThis is a Telegram <b>Video Compress Bot</b>. \n\n<b>Please send me any Telegram big video file I will compress it as s small video file!</b> \n\n/help for more details. \n\nSupport Group: @Linux_Repo"
+    START_TEXT = "Hello, \n\nThis is a Telegram <b>Video Compress Bot</b>. \n\n<b>Please send me any Telegram big video file I will compress it as s small video file!</b> \n\n/help for more details. \n\nSupport Group: @OMG_info"
    
     ABS_TEXT = " Please don't be selfish."
     
@@ -23,7 +23,7 @@ class Localisation:
     
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.95GB due to Telegram API limitations."
     
-    COMPRESS_SUCCESS = "📥 Downloaded in {}\n\n🗜 Compressed in {}\n\n📤 Uploaded in {}\n\nBy @TheChariotOflight"
+    COMPRESS_SUCCESS = "📥 Downloaded in {}\n\n🗜 Compressed in {}\n\n📤 Uploaded in {}\n\nBy @OMG_info"
 
     COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 Progress: {}%"
 
@@ -47,7 +47,7 @@ class Localisation:
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "Hello! I am a fast Video Compressor Bot. \n\nSteps to compress a Video :  \n\n• Send the Video you want the Bot to compress \n\n• Reply to the Video by ' /compress N ' \n\n           Where replace N with the percentage of Compression you need in the range of '10 to 90'  \n\nExample : /compress 70 "
+        "Hello! I am a fast Video Compressor Bot. \n\nSteps to compress a Video :  \n\n• Send the Video you want the Bot to compress \n\n• Reply to the Video by /compress 50% "
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",
